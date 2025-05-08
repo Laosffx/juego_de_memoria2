@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,7 +55,7 @@
             const tiempoFinal = Date.now();
             const tiempoTotal = tiempoFinal - tiempoInicio;
             document.getElementById("resultado").textContent =
-              `✅ Juego terminado.`;
+              `✅ Juego terminado. Tiempo: ${tiempoTotal}ms. Intentos: ${intentos}`;
 
             window.parent.postMessage({
               tiempo: tiempoTotal,
