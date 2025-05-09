@@ -60,15 +60,15 @@
     `✅ Juego terminado.`;
 
   console.log("✅ Enviando a Qualtrics:", {
-    tiempo2: tiempoFormateado,
-    intentos2: intentos,
-    orden2: orden
+    tiempo: tiempoFormateado,
+    intentos: intentos,
+    orden: orden
   });
 
   window.parent.postMessage({
-    tiempo2: tiempoFormateado,
-    intentos2: intentos,
-    orden2: orden
+    tiempo: tiempoFormateado,
+    intentos: intentos,
+    orden: orden
   }, "*");
 }
 
