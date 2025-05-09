@@ -52,19 +52,26 @@
           emparejadas++;
           seleccionadas = [];
           if (emparejadas === 6) {
-           const tiempoFinal = Date.now();
-const tiempoTotalMs = tiempoFinal - tiempoInicio;
-const tiempoFormateado = (tiempoTotalMs / 1000).toFixed(3); // en segundos, con 3 decimales
+  const tiempoFinal = Date.now();
+  const tiempoTotalMs = tiempoFinal - tiempoInicio;
+  const tiempoFormateado = (tiempoTotalMs / 1000).toFixed(3); // en segundos
 
-            document.getElementById("resultado").textContent =
-              `✅ Juego terminado.`;
+  document.getElementById("resultado").textContent =
+    `✅ Juego terminado. Tiempo: ${tiempoFormateado}s. Intentos: ${intentos}`;
 
-            window.parent.postMessage({
-              tiempo: tiempoTotal,
-              intentos: intentos,
-              orden: orden
-            }, "*");
-          }
+  console.log("✅ Enviando a Qualtrics:", {
+    tiempo2: tiempoFormateado,
+    intentos2: intentos,
+    orden2: orden
+  });
+
+  window.parent.postMessage({
+    tiempo2: tiempoFormateado,
+    intentos2: intentos,
+    orden2: orden
+  }, "*");
+}
+
         } else {
           setTimeout(() => {
             a.card.classList.remove("abierta");
